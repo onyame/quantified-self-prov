@@ -1,0 +1,26 @@
+
+document
+
+  prefix var <http://openprovenance.org/var#>
+  prefix vargen <http://openprovenance.org/vargen#>
+  prefix tmpl <http://openprovenance.org/tmpl#>
+  prefix ex <http://example.com/#>
+
+
+  prefix foaf <http://xmlns.com/foaf/0.1/>
+  
+  bundle vargen:bundleId
+    entity(var:userdata, [tmpl:label='var:userdata_label', prov:type='var:userdata_type'])
+    entity(var:userdata2, [tmpl:label='var:userdata2_label', prov:type='var:userdata2_type')
+    agent(var:agent, [prov:type='prov:SoftwareAgent, tmpl:label='var:agent_label'])
+    agent(var:user, [prov:type='prov:Person', tmpl:label='var:user_label'])
+    activity(ex:export, [tmpl:startTime='var:start',tmpl:endTime='var:end', prov:type='var:action_type'])
+    wasAssociatedWith(ex:export,var:agent,-)
+    wasAttributedTo(var:userdata, var:user)
+    wasAttributedTo(var:userdata2, var:user)
+    wasDerivedFrom(var:userdata, var:userdata2)
+    wasGeneratedBy(var:userdata, ex:export, -, [ tmpl:time='var:generation_time' ] )
+    used(ex:export, var:userdata2, -, [tmpl:time='var:usage_time'])
+  endBundle
+
+endDocument

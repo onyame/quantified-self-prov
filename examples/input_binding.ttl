@@ -1,0 +1,29 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix tmpl: <http://openprovenance.org/tmpl#> .
+@prefix var: <http://openprovenance.org/var#> .
+@prefix ex: <http://example.com/#> .
+
+var:userdata  a prov:Entity;
+           tmpl:value_0 ex:userdata.
+var:userdata_type  a prov:Entity;
+           tmpl:2dvalue_0_0 prov:UserData.
+var:userdata_label  a prov:Entity;
+           tmpl:2dvalue_0_0 "Example userdata".
+var:agent  a prov:Entity;
+           tmpl:value_0 ex:agent.
+var:agent_label  a prov:Entity;
+           tmpl:2dvalue_0_0 "Example SoftwareAgent".
+var:user  a prov:Entity;
+           tmpl:value_0 <simon.mueller@dlr.de>.
+var:user_label  a prov:Entity;
+           tmpl:2dvalue_0_0 "Example User".
+var:input_type  a prov:Entity;
+           tmpl:2dvalue_0_0 "ex:FitbitApi".
+var:input_start  a prov:Entity;
+           tmpl:2dvalue_0_0 "2001-10-26T21:32:52".
+var:input_end  a prov:Entity;
+           tmpl:2dvalue_0_0 "2001-10-26T21:34:52".
+var:generation_time  a prov:Entity;
+           tmpl:2dvalue_0_0 "2001-10-26T21:33:52".
+
