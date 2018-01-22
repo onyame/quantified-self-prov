@@ -5,19 +5,18 @@ document
   prefix vargen <http://openprovenance.org/vargen#>
   prefix tmpl <http://openprovenance.org/tmpl#>
   prefix ex <http://example.com/#>
-
-
+  prefix method <http://www.java.com/>
   prefix foaf <http://xmlns.com/foaf/0.1/>
   
   bundle vargen:bundleId
     entity(var:userdata, [tmpl:label='var:userdata_label', prov:type='var:userdata_type'])
     agent(var:agent, [prov:type='prov:SoftwareAgent, tmpl:label='var:agent_label'])
     agent(var:user, [prov:type='prov:Person', tmpl:label='var:user_label'])
-    activity(ex:input, [tmpl:startTime='var:input_start',tmpl:endTime='var:input_end', prov:type='var:input_type'])
-    wasAssociatedWith(ex:input,var:agent,-)
-    wasAssociatedWith(ex:input,var:user,-)
+    activity(method:input, [tmpl:startTime='var:input_start',tmpl:endTime='var:input_end', prov:type='var:input_type'])
+    wasAssociatedWith(method:input,var:agent,-)
+    wasAssociatedWith(method:input,var:user,-)
     wasAttributedTo(var:userdata, var:user)
-    wasGeneratedBy(var:userdata, ex:input, -, [ tmpl:time='var:generation_time' ] )
+    wasGeneratedBy(var:userdata, method:input, -, [ tmpl:time='var:generation_time' ] )
   endBundle
 
 endDocument
